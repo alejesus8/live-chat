@@ -22,8 +22,8 @@ require('./sockets')(io);
 //ENVIANDO LOS ARCHIVOS ESTATICOS
 app.use(express.static(path.join(__dirname,'public')));
 
-//ESCUCHANDO EL SERVER
-server.listen(3000, () => {
-  console.log('server on port 3000')
+// starting the server
+server.listen(app.get('port'), () => {
+  console.log(`server on port ${app.get('port')}`);
 });
 
